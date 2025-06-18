@@ -10,7 +10,7 @@
                 </a> : mariages, concerts, festivals...
             </p>
             <div class="center-btn mt-4">
-                <button class="btn">Créez votre devis ici</button>
+                <a href="contact.php" style="text-decoration: none;"><button class="btn">Un devis ? Contactez-nous</button></a>
             </div>
         </div>
 

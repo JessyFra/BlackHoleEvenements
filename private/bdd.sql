@@ -168,9 +168,9 @@ INSERT INTO faq (question, answer) VALUES
 ("Appliquez-vous des frais de déplacement ?", "Oui, les frais de déplacements sont indiqués dans le devis."),
 ("Quel est le montant de l’acompte ?", "Le montant de l'acompte et de 40 %."),
 ("Quelle tenue portez-vous lors d'évènement ?", "Les tenus que nous portons sont en accords avec votre dress-code."),
-("A quelle heure se termine la soirée ?", "5 h, voir arrêté préfectoral ou en fonction des horaires de la salle de réception."),
+("A quelle heure se termine la soirée ?", "La soirée se termine généralement à 5 h du matin, sous réserve des arrêtés préfectoraux et des horaires autorisés par la salle de réception."),
 ("A quel moment l'installation est-elle prévue ?", "L'installation est prévue quelques jours avant en fonction de votre planning."),
-("Comment se passe la désinstallation ?", "En fonction de la disponibilité du lieu, le démontage est possible après votre soirée, ou en début de semaine prochaine.");
+("Comment se passe la désinstallation ?", "La désinstallation peut s’effectuer immédiatement après votre soirée, si la salle le permet. Elle pourra également être réalisée le lendemain ou selon les disponibilités du lieu.");
 
 -- Insertion des informations Mention légales
 INSERT INTO mention_legale (title, content) VALUES

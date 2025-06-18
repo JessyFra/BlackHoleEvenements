@@ -56,6 +56,11 @@
     margin-bottom: 0;
 }
 
+.review-date {
+    font-size: 13px;
+    font-style: italic;
+}
+
 /* Étoiles de notation */
 .stars {
     color: var(--color-site-item);

@@ -8,6 +8,7 @@ class GalleryImageModel
     public function getAllImages(PDO $bdd)
     {
         $sql = "SELECT 
+                    id,
                     chemin_img, 
                     alt, 
                     filtres_services, 

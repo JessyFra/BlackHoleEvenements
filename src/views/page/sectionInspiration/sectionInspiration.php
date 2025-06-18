@@ -60,16 +60,26 @@
     <!-- GALERIE -->
     <div class="gallery">
         <?php foreach ($imagesGallery as $img): ?>
-            <img
-                src="../../../public/assets/img/<?= htmlspecialchars($img['chemin_img']) ?>"
-                loading="lazy"
-                alt="<?= htmlspecialchars($img['alt']) ?>"
-                class="photo"
-                data-service="<?= htmlspecialchars($img['filtres_services'] ?? '') ?>"
-                data-theme="<?= htmlspecialchars($img['filtres_themes'] ?? '') ?>"
-                data-lieux="<?= htmlspecialchars($img['filtres_lieux'] ?? '') ?>"
-                data-bs-toggle="modal"
-                data-bs-target="#imageModal" />
+            <div class="photo-wrapper position-relative">
+                <a href="../../model/ImageModel/deleteImageModel.php?id=<?= $img['id'] ?>"
+                    class="delete-badge"
+                    title="Supprimer l’image"
+                    onclick="event.stopPropagation();">
+                    <i class="fa-solid fa-trash" style="color: red;"></i>
+                </a>
+
+                <img
+                    src="../../../public/assets/img/<?= htmlspecialchars($img['chemin_img']) ?>"
+                    loading="lazy"
+                    alt="<?= htmlspecialchars($img['alt']) ?>"
+                    class="photo"
+                    data-id="<?= $img['id'] ?>"
+                    data-service="<?= htmlspecialchars($img['filtres_services'] ?? '') ?>"
+                    data-theme="<?= htmlspecialchars($img['filtres_themes'] ?? '') ?>"
+                    data-lieux="<?= htmlspecialchars($img['filtres_lieux'] ?? '') ?>"
+                    data-bs-toggle="modal"
+                    data-bs-target="#imageModal" />
+            </div>
         <?php endforeach; ?>
 
         <!-- Message si aucun résultat -->

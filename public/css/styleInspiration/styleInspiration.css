@@ -201,11 +201,6 @@
     display: block;
     border: 2px solid var(--color-gray-border);
     box-shadow: 0 4px 6px var(--color-gray-shadow);
-    transition: transform 0.3s ease;
-}
-
-.photo:hover {
-    transform: translateY(-5px);
 }
 
 .hidden {
@@ -217,6 +212,28 @@
     height: 25px;
     color: var(--color-text);
     cursor: default;
+}
+
+.photo-wrapper {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.photo-wrapper .delete-badge {
+    position: absolute;
+    background-color: var(--color-gray-background);
+    border: 1px solid var(--color-gray-border);
+    top: 8px;
+    right: 10px;
+    border-radius: 8px;
+    padding: 3px 7px;
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+}
+
+.photo-wrapper:hover {
+    transform: translateY(-5px);
 }
 
 /* ========== ANIMATIONS ========== */

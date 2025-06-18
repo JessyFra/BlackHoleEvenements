@@ -11,6 +11,13 @@ if (isset($_POST['publishPhoto'])) {
     $photoAlt  = $_POST['photoDesc'];
     $createdAt = date('Y-m-d H:i:s');
 
+    $validTags = ['imgHeroHome'];
+    $tag = null;
+
+    if (isset($_POST['tag']) && in_array($_POST['tag'], $validTags)) {
+        $tag = $_POST['tag'];
+    }
+
     $filtreService = $_POST['filtres_services'] ?? null;
     $filtreTheme   = $_POST['filtres_themes']   ?? null;
     $filtreLieu    = $_POST['filtres_lieux']    ?? null;
@@ -26,7 +33,17 @@ if (isset($_POST['publishPhoto'])) {
         $fileName = $_FILES['image']['name'];
         $fileExt  = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
 
-        $uniqueFilename = $photoName . '.' . $fileExt;
+        function removeAccents($str)
+        {
+            return iconv('UTF-8', 'ASCII//TRANSLIT', $str);
+        }
+
+        // Ajout d’un identifiant unique 
+        $uniqueId = '_' . uniqid();
+
+        $photoNameNoAccents = removeAccents($photoName);
+
+        $uniqueFilename = $photoNameNoAccents . $uniqueId . '.' . $fileExt;
         $destination = $uploadDir . $uniqueFilename;
 
         $width    = 800;
@@ -46,6 +63,7 @@ if (isset($_POST['publishPhoto'])) {
             $filtreService,
             $filtreTheme,
             $filtreLieu,
+            $tag,
             $createdAt
         );
 

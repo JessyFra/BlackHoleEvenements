@@ -188,6 +188,8 @@
     grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
     gap: 15px;
     box-sizing: border-box;
+    align-self: flex-start;
+    
 }
 
 .photo {

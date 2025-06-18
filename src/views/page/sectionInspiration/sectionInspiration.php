@@ -61,13 +61,15 @@
     <div class="gallery">
         <?php foreach ($imagesGallery as $img): ?>
             <div class="photo-wrapper position-relative">
+            <?php if (isset($_SESSION['userRole']) && $_SESSION['userRole'] == 'admin') { ?>
                 <a href="../../model/ImageModel/deleteImageModel.php?id=<?= $img['id'] ?>"
                     class="delete-badge"
                     title="Supprimer l’image"
                     onclick="event.stopPropagation();">
                     <i class="fa-solid fa-trash" style="color: red;"></i>
                 </a>
-
+            <?php } ?>
+            
                 <img
                     src="../../../public/assets/img/<?= htmlspecialchars($img['chemin_img']) ?>"
                     loading="lazy"

@@ -71,6 +71,11 @@
                                 <?php endforeach; ?>
                             </div>
                         </div>
+
+                        <div class="col-md-6 mb-4">
+                            <label for="new_theme" class="form-label fw-bold">Ajouter un nouveau thème</label>
+                            <input type="text" class="form-control" id="new_theme" name="new_theme" placeholder="Ex : Bohème">
+                        </div>
                     </div>
 
                     <div class="mb-4">
@@ -91,6 +96,11 @@
                                 </div>
                             <?php endforeach; ?>
                         </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <label for="new_lieu" class="form-label fw-bold">Ajouter un nouveau lieu</label>
+                        <input type="text" class="form-control" id="new_lieu" name="new_lieu" placeholder="Exemple : Château de Montbrun">
                     </div>
                 </div>
 

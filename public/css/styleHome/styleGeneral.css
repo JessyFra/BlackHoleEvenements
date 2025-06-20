@@ -8,11 +8,32 @@ body {
 }
 
 .title-separator {
-    border: 2px solid var(--color-tomato-item);
+    border: 2px solid var(--color-site-item);
     border-radius: 2px;
     width: 100px;
     margin-bottom: 25px;
     margin-left: auto;
     margin-right: auto;
     opacity: 100;
+}
+
+/* ========== ANIMATION ========== */
+
+/* Animation Fade-In Up */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-section,
+.boxService {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.2s;
 }

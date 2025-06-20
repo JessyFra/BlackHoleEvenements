@@ -40,7 +40,7 @@ function filterPhotos() {
             return filters[group].some((f) => dataValues.includes(f));
         });
 
-        photo.classList.toggle("hidden", !matches);
+        photo.closest(".photo-wrapper").classList.toggle("hidden", !matches);
         if (matches) visibleCount++;
     });
 

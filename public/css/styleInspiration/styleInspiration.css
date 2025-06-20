@@ -25,7 +25,7 @@
 
 .sidebar .faq-section .section-title {
     font-weight: bold;
-    color: var(--color-tomato-item);
+    color: var(--color-site-item);
     margin-bottom: 0.3em;
     text-align: left;
     font-size: 1.5em;
@@ -33,7 +33,7 @@
 
 .sidebar .faq-section .title-separator {
     border: 0;
-    border-top: 5px solid var(--color-tomato-item);
+    border-top: 5px solid var(--color-site-item);
     width: 100px;
     margin-left: 0;
     margin-bottom: 2rem;
@@ -98,7 +98,7 @@
 }
 
 .filter-options input[type="checkbox"]:checked {
-    background-color: var(--color-tomato-item);
+    background-color: var(--color-site-item);
 }
 
 .filter-options input[type="checkbox"]::after {
@@ -128,8 +128,8 @@
 
 #lieuxSearch:focus {
     outline: none;
-    box-shadow: 0 0 0 2px var(--color-tomato-item);
-    border-color: var(--color-tomato-item);
+    box-shadow: 0 0 0 2px var(--color-site-item);
+    border-color: var(--color-site-item);
 }
 
 #lieuxSearch::placeholder {
@@ -143,7 +143,7 @@
 }
 
 #lieuxSuggestions div:hover {
-    background-color: var(--color-tomato-item-hover);
+    background-color: var(--color-site-item-hover);
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -160,7 +160,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: var(--color-tomato-item);
+    background: var(--color-site-item);
     border-radius: 8px;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -176,7 +176,7 @@
 
 .resetFilter:hover {
     transform: translateY(-3px);
-    background: var(--color-tomato-item-hover);
+    background: var(--color-site-item-hover);
 }
 
 /* ========== GALERIE ========== */
@@ -188,6 +188,7 @@
     grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
     gap: 15px;
     box-sizing: border-box;
+    align-self: flex-start;
 }
 
 .photo {
@@ -199,11 +200,6 @@
     display: block;
     border: 2px solid var(--color-gray-border);
     box-shadow: 0 4px 6px var(--color-gray-shadow);
-    transition: transform 0.3s ease;
-}
-
-.photo:hover {
-    transform: translateY(-5px);
 }
 
 .hidden {
@@ -217,72 +213,26 @@
     cursor: default;
 }
 
-/* ========== MODALE ========== */
-
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+.photo-wrapper {
+    position: relative;
+    transition: transform 0.3s ease;
 }
 
-.modal-overlay.active {
-    display: flex;
-}
-
-.modal-content {
-    max-width: 90vw;
-    max-height: 90vh;
-    box-shadow: 0 0 15px black;
+.photo-wrapper .delete-badge {
+    position: absolute;
+    background-color: var(--color-gray-background);
+    border: 1px solid var(--color-gray-border);
+    top: 8px;
+    right: 10px;
     border-radius: 8px;
-    overflow: hidden;
+    padding: 3px 7px;
+    z-index: 10;
+    width: 30px;
+    height: 30px;
 }
 
-.modal-content img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    border-radius: 8px;
-    user-select: none;
-    border: 2px solid var(--color-gray-border);
-}
-
-.modal-dialog-centered {
-    justify-content: center;
-}
-
-/* Flou et fond plus doux pour le backdrop Bootstrap */
-
-.modal-backdrop {
-    --bs-backdrop-opacity: 0.7;
-}
-
-.btn-close {
-    width: 25px;
-    height: 25px;
-    background-color: var(--color-tomato-item);
-    border-radius: 8px;
-    border: 2px solid var(--color-gray-border);
-}
-
-.btn-close:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-/* Quand modale active, flouter le fond */
-
-.modal.show ~ .main-container {
-    filter: blur(2px);
-    pointer-events: none;
-    transition: filter 0.3s ease;
+.photo-wrapper:hover {
+    transform: translateY(-5px);
 }
 
 /* ========== ANIMATIONS ========== */
@@ -304,6 +254,13 @@
     animation-delay: 0.2s;
 }
 
+/* ========== MODAL ========== */
+
+#imageModal .modal-content {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
 /* ========== RESPONSIVE ========== */
 
 @media (max-width: 600px) {
@@ -312,7 +269,7 @@
     }
 
     .sidebar .faq-section .title-separator {
-        border-top: 3px solid var(--color-tomato-item);
+        border-top: 3px solid var(--color-site-item);
         width: 50px;
         margin-top: 10px;
     }

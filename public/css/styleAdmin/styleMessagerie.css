@@ -15,7 +15,7 @@ body {
 /* Titre de la section */
 .main-container .section-title {
     font-weight: bold;
-    color: var(--color-tomato-item);
+    color: var(--color-site-item);
     margin-bottom: 0.3em;
     text-align: left;
 }
@@ -23,7 +23,7 @@ body {
 /* Séparateur sous le titre */
 .main-container .title-separator {
     border: 0;
-    border-top: 5px solid var(--color-tomato-item);
+    border-top: 5px solid var(--color-site-item);
     width: 100px;
     margin-left: 0;
     margin-bottom: 2rem;
@@ -63,13 +63,13 @@ body {
     box-shadow: 0 4px 6px var(--color-gray-shadow);
     border: 1px solid var(--color-gray-border);
     transition: transform 0.3s ease;
-    cursor: pointer;;
+    cursor: pointer;
     justify-content: center;
     align-items: center;
 }
 
 .message-card.unread {
-    background-color: var(--color-tomato-item-hover);
+    background-color: var(--color-site-item-hover);
 }
 
 .message-card:hover {

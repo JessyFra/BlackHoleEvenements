@@ -19,12 +19,12 @@ body {
 }
 
 .link {
-    border-bottom: 2px solid var(--color-tomato-item);
+    border-bottom: 2px solid var(--color-site-item);
     padding: 1rem 0;
 }
 
 .link .active {
-    background-color: var(--color-tomato-item) !important;
+    background-color: var(--color-site-item) !important;
     color: var(--color-gray-background) !important;
     border: none;
     cursor: default;
@@ -41,7 +41,7 @@ body {
     font-size: 1.4rem;
     font-weight: bold;
     color: var(--color-text);
-    border-bottom: 2px solid var(--color-tomato-item);
+    border-bottom: 2px solid var(--color-site-item);
     padding-bottom: 0.5rem;
     text-align: start;
 }
@@ -55,7 +55,7 @@ body {
 .article-meta {
     font-size: 0.95rem;
     color: var(--color-text);
-    border-top: 2px solid var(--color-tomato-item);
+    border-top: 2px solid var(--color-site-item);
     padding-top: 1rem;
 }
 
@@ -173,7 +173,7 @@ body {
 
 input#title {
     border-radius: 0 !important;
-    border: 1px solid var(--color-tomato-item);
+    border: 1px solid var(--color-site-item);
     box-shadow: none;
 }
 
@@ -196,7 +196,7 @@ input#title {
     }
 
     .article-meta {
-        border-bottom: 2px solid var(--color-tomato-item);
+        border-bottom: 2px solid var(--color-site-item);
     }
 }
 

@@ -7,20 +7,6 @@
     --color-text: black;
     --color-text-hover: rgba(0, 0, 0, 0.50);
 
-    --color-tomato-item: #ff977d;
-    --color-tomato-item-hover: #fbd3cb;
+    --color-site-item: #b7852e;
+    --color-site-item-hover: #b7852ebf;
 }
-
-/* Pour le darkMode */
-/* :root {
-    --color-gray-background: rgb(25, 25, 25);
-
-    --color-gray-border: rgb(238, 238, 238);
-    --color-gray-shadow: rgb(238, 238, 238, 0.15);
-
-    --color-text: rgb(255, 255, 255);
-    --color-text-hover: rgb(180, 180, 180);
-
-    --color-tomato-item: rgb(251, 211, 203);
-    --color-tomato-item-hover: rgb(255, 151, 125);
-} */

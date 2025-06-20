@@ -38,8 +38,6 @@ $selectedService = $_GET['service'] ?? '';
 
     <!-- Scripts personnalisés -->
     <script src="../../../public/js/filterPhoto.js"></script>
-    <script src="../../../public/js/modalPhoto.js"></script>
-    <script src="../../../public/js/modalClickPhoto.js"></script>
     <script src="../../../public/js/filterReset.js"></script>
     <script src="../../../public/js/searchLieu.js"></script>
     <script src="../../../public/js/filterServiceToInspiration.js"></script>

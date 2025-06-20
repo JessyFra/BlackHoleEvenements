@@ -1,7 +1,7 @@
 /* ========== SECTION HERO PRINCIPALE ========== */
 
 .hero-section {
-    padding: 25px 15px;
+    padding-top: 50px;
 }
 
 /* Logo */
@@ -27,13 +27,13 @@
 
 /* Lien personnalisé */
 .custom-link {
-    color: var(--color-tomato-item);
+    color: var(--color-site-item);
     text-decoration: none;
     font-weight: 500;
 }
 
 .custom-link:hover {
-    color: var(--color-tomato-item-hover);
+    color: var(--color-site-item-hover);
 }
 
 /* Bouton centré */
@@ -44,7 +44,7 @@
 
 .hero-section .btn {
     font-weight: bold;
-    background: var(--color-tomato-item);
+    background: var(--color-site-item);
     color: var(--color-gray-background);
     border-radius: 8px;
     transition: all 0.3s ease;
@@ -56,7 +56,7 @@
 }
 
 .hero-section .btn:hover {
-    background: var(--color-tomato-item-hover);
+    background: var(--color-site-item-hover);
     transform: translateY(-3px);
 }
 
@@ -70,7 +70,7 @@
 .carousel-inner img {
     object-fit: cover;
     width: 100%;
-    height: 300px;
+    height: 400px;
 }
 
 /* Indicateurs du carousel */
@@ -91,7 +91,7 @@
 }
 
 .carousel-indicators .active {
-    background-color: var(--color-tomato-item);
+    background-color: var(--color-site-item);
 }
 
 /* ========== SECTION PRÉSENTATION ========== */
@@ -127,7 +127,7 @@
 .stat-item h3 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: var(--color-tomato-item);
+    color: var(--color-site-item);
     margin-bottom: 10px;
 }
 

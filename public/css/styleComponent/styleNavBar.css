@@ -41,5 +41,5 @@
 
 .customNavbar .navbar-nav .custom-nav-link.active {
     font-weight: bold;
-    color: var(--color-tomato-item);
+    color: var(--color-site-item);
 }

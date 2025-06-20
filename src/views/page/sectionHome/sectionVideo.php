@@ -6,7 +6,7 @@
 
     <div class="cover-content text-white text-center">
         <h1 class="display-4 fw-bold">Projection immersif</h1>
-        <p class="lead">Vivez une expérience <span class="custom">inédite</span></p>
+        <p class="lead">Vivez une expérience inédite</p>
         <a href="actualite.php?articleID=2" class="custom-bouton">Découvrir</a>
     </div>
 </section>

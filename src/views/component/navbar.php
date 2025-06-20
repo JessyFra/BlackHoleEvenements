@@ -1,5 +1,6 @@
 <?php
 $current_page = basename($_SERVER['PHP_SELF']);
+$page_type = $_GET['type'] ?? '';
 ?>
 
 <nav class="navbar navbar-expand-md fixed-top customNavbar">
@@ -52,7 +53,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         <a class="custom-nav-link <?php echo ($current_page == 'inspiration.php') ? 'active' : ''; ?>" href="inspiration.php">Inspiration</a>
                     </li>
                     <li class="nav-item">
-                        <a class="custom-nav-link <?php echo ($current_page == 'legalPage.php?type=faq') ? 'active' : ''; ?>" href="legalPage.php?type=faq">FAQ</a>
+                        <a class="custom-nav-link <?php echo ($current_page == 'legalPage.php' && $page_type == 'faq') ? 'active' : ''; ?>" href="legalPage.php?type=faq">FAQ</a>
                     </li>
                     <li class="nav-item">
                         <a class="custom-nav-link <?php echo ($current_page == 'actualite.php') ? 'active' : ''; ?>" href="actualite.php">Actualités</a>

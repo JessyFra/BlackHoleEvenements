@@ -3,7 +3,7 @@
 /* Titre de la section */
 .legal-section .section-title {
     font-weight: bold;
-    color: var(--color-tomato-item);
+    color: var(--color-site-item);
     margin-bottom: 0.3em;
     text-align: left;
 }
@@ -11,7 +11,7 @@
 /* Séparateur sous le titre */
 .legal-section .title-separator {
     border: 0;
-    border-top: 5px solid var(--color-tomato-item);
+    border-top: 5px solid var(--color-site-item);
     width: 100px;
     margin-left: 0;
     margin-bottom: 2rem;
@@ -69,7 +69,7 @@
     align-items: center;
     font-weight: 600;
     font-size: 1.2rem;
-    color: var(--color-tomato-item);
+    color: var(--color-site-item);
     margin-bottom: 10px;
 }
 

@@ -1,17 +1,4 @@
-<!-- Modal pour agrandir l'image -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true" role="dialog">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content" style="background-color: transparent; border: none; box-shadow: none;">
-            <div class="modal-body text-center p-0">
-                <img id="modalImage" src="" alt="Image agrandie" style="width: 100%; height: auto; object-fit: contain;" />
-            </div>
-            <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-    </div>
-</div>
-
 <section class="main-container">
-
     <!-- SIDEBAR avec TITRE + FILTRES -->
     <div class="sidebar">
         <!-- TITRE -->
@@ -73,15 +60,28 @@
     <!-- GALERIE -->
     <div class="gallery">
         <?php foreach ($imagesGallery as $img): ?>
-            <img
-                src="../../../public/assets/img/<?= htmlspecialchars($img['chemin_img']) ?>"
-                alt="<?= htmlspecialchars($img['alt']) ?>"
-                class="photo"
-                data-service="<?= htmlspecialchars($img['filtres_services'] ?? '') ?>"
-                data-theme="<?= htmlspecialchars($img['filtres_themes'] ?? '') ?>"
-                data-lieux="<?= htmlspecialchars($img['filtres_lieux'] ?? '') ?>"
-                data-bs-toggle="modal"
-                data-bs-target="#imageModal" />
+            <div class="photo-wrapper position-relative">
+            <?php if (isset($_SESSION['userRole']) && $_SESSION['userRole'] == 'admin') { ?>
+                <a href="../../model/ImageModel/deleteImageModel.php?id=<?= $img['id'] ?>"
+                    class="delete-badge"
+                    title="Supprimer l’image"
+                    onclick="event.stopPropagation();">
+                    <i class="fa-solid fa-trash" style="color: red;"></i>
+                </a>
+            <?php } ?>
+            
+                <img
+                    src="../../../public/assets/img/<?= htmlspecialchars($img['chemin_img']) ?>"
+                    loading="lazy"
+                    alt="<?= htmlspecialchars($img['alt']) ?>"
+                    class="photo"
+                    data-id="<?= $img['id'] ?>"
+                    data-service="<?= htmlspecialchars($img['filtres_services'] ?? '') ?>"
+                    data-theme="<?= htmlspecialchars($img['filtres_themes'] ?? '') ?>"
+                    data-lieux="<?= htmlspecialchars($img['filtres_lieux'] ?? '') ?>"
+                    data-bs-toggle="modal"
+                    data-bs-target="#imageModal" />
+            </div>
         <?php endforeach; ?>
 
         <!-- Message si aucun résultat -->
@@ -90,3 +90,33 @@
         </div>
     </div>
 </section>
+
+<!-- Modale personnalisée pour image -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true" style="background-color: rgba(0, 0, 0, 0.8);">
+    <div class=" modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+        <div class="modal-content border-0">
+            <div class="modal-body d-flex justify-content-center align-items-center p-0" style="background-color: transparent; height: calc(100vh - 62px); margin: 0;">
+                <img
+                    id="modalImage"
+                    src=""
+                    alt="Image agrandie"
+                    class="img-fluid"
+                    style="max-width: 90vw; max-height: 90vh; object-fit: contain; cursor: pointer; margin: 0; display: block;"
+                    data-bs-dismiss="modal">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const modalImage = document.getElementById('modalImage');
+
+        document.querySelectorAll('.gallery .photo').forEach(img => {
+            img.addEventListener('click', function() {
+                modalImage.src = this.src;
+                modalImage.alt = this.alt;
+            });
+        });
+    });
+</script>

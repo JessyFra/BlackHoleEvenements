@@ -168,15 +168,15 @@ INSERT INTO faq (question, answer) VALUES
 ("Appliquez-vous des frais de déplacement ?", "Oui, les frais de déplacements sont indiqués dans le devis."),
 ("Quel est le montant de l’acompte ?", "Le montant de l'acompte et de 40 %."),
 ("Quelle tenue portez-vous lors d'évènement ?", "Les tenus que nous portons sont en accords avec votre dress-code."),
-("A quelle heure se termine la soirée ?", "5 h, voir arrêté préfectoral ou en fonction des horaires de la salle de réception."),
+("A quelle heure se termine la soirée ?", "La soirée se termine généralement à 5 h du matin, sous réserve des arrêtés préfectoraux et des horaires autorisés par la salle de réception."),
 ("A quel moment l'installation est-elle prévue ?", "L'installation est prévue quelques jours avant en fonction de votre planning."),
-("Comment se passe la désinstallation ?", "En fonction de la disponibilité du lieu, le démontage est possible après votre soirée, ou en début de semaine prochaine.");
+("Comment se passe la désinstallation ?", "La désinstallation peut s’effectuer immédiatement après votre soirée, si la salle le permet. Elle pourra également être réalisée le lendemain ou selon les disponibilités du lieu.");
 
 -- Insertion des informations Mention légales
 INSERT INTO mention_legale (title, content) VALUES
 ("Editeur du site", "- Raison sociale : Black Hole Evènements <br> - Adresse postale : 14 CHEMIN DE LA PLANEZE, 63800 LA ROCHE-NOIRE France <br> - Adresse mail : blackhole.evenements@gmail.com <br> - Téléphone : 09 73 17 03 76 ou 06 10 56 43 68 ou 07 83 51 86 76 <br> - Forme juridique : Association déclarée <br> - SIRET : 809 220 346 00013 <br> - Responsable : Monsieur Frédéric WERNER"),
-("Hébergement du site", "- Nom de l'hebergeur web <br> - Adresse postale de l'hebergeur <br> - Tel de l'hebergeur <br> - Url de l'hebergeur <br>"),
-("Conception & Développement", "- Identité : Jessy Frachisse <br> - Statut : Développeur Web <br> - Contact : contact.jessyf@gmail.com <br> - Portfolio : <a style=\"color: var(--color-tomato-item); text-decoration: none;\" href=\"https://jessyf.fr/\">https://jessyf.fr/</a>"),
+("Hébergement du site", "- OVHcloud <br> - 2, rue Kellermann, 59100 Roubaix <br> - 1007 (composez le +33 9 72 10 10 07 depuis une ligne en dehors de la France) <br> - https://www.ovhcloud.com/fr/ <br>"),
+("Conception & Développement", "- Identité : Jessy Frachisse <br> - Statut : Développeur Web <br> - Contact : contact.jessyf@gmail.com <br> - Portfolio : <a style=\"color: var(--color-site-item); text-decoration: none;\" href=\"https://jessyf.fr/\">https://jessyf.fr/</a>"),
 ("Propriété intellectuelle", "Le contenu de ce site (textes, images, code, design) est protégé par le droit d’auteur. <br> Toute reproduction, totale ou partielle, est interdite sans l’autorisation écrite de Black Hole Evènements. <br> Les images utilisées sont soit libres de droits, soit créées par l’auteur."),
 ("Responsabilité", "Black Hole Evènements s’efforce de fournir des informations à jour sur ce site, mais ne garantit ni l’exactitude ni l’exhaustivité. <br> L’utilisation du site se fait sous la responsabilité de l’utilisateur. <br> L’auteur ne peut être tenu responsable d’un quelconque dommage résultant de la consultation du site."),
 ("Données personelle", "Ce site peut collecter des données via la page « Contactez-nous » ainsi que toute page associée, uniquement dans le cadre d’un échange avec l’auteur. <br> Les données ne sont en aucun cas cédées à des tiers et sont conservées pour une durée maximale de 12 mois. <br> Pour plus d’informations sur les cookies utilisés et la collecte de données, veuillez consulter notre Politique de confidentialité. <br> Conformément au RGPD, vous pouvez demander l’accès, la rectification ou la suppression de vos données à l’adresse suivante : blackhole.evenements@gmail.com"),
@@ -215,80 +215,145 @@ INSERT INTO services (nom, valeur, description, chemin_icon, alt_icon, ordre_aff
 
 -- Filtre 'Thèmes'
 INSERT INTO themes (nom, valeur) VALUES
-("Mariage", "mariage"),
-("Entreprise", "entreprise"),
-("Événement", "evenement");
+("Guinguette", "guinguette"),
+("Cérémonie laique", "laique");
 
 -- Filtre 'Lieux'
 INSERT INTO lieux (nom, valeur) VALUES
 -- Salles des fêtes
-("Salle des fêtes de Beauregard Vendon", "beauregard-vendon"),
+-- ("Salle des fêtes de Beauregard Vendon", "beauregard-vendon"),
 ("Salle des fêtes de Saint-Illide", "saint-illide"),
 
 -- Granges
-("Grange de l\'écuyer", "grange-ecuyer"),
+-- ("Grange de l'écuyer", "grange-ecuyer"),
 ("Grange de Faverolles", "grange-faverolles"),
-("Grange d\'Aubusson", "grange-aubusson"),
+-- ("Grange d'Aubusson", "grange-aubusson"),
 
 -- Manoirs
-("Manoir de Veygoux", "veygoux"),
-("Manoir d\'Alice", "alice"),
+-- ("Manoir de Veygoux", "veygoux"),
+-- ("Manoir d'Alice", "alice"),
 
 -- Domaines
-("Domaine du Mialaret", "mialaret"),
+-- ("Domaine du Mialaret", "mialaret"),
 ("Domaine du Marant", "marant"),
 ("Domaine du Lac des Estives", "lac-estives"),
 ("Domaine de Sola", "sola"),
 ("Domaine de la Tour de Rochefort", "rochefort"),
 ("Domaine de Féligonde", "feligonde"),
 ("Domaine du Balbuzard", "balbuzard"),
+("Domaine du Clos du Four", "clos-four"),
 
 -- Châteaux
 ("Château de Périgères", "perigeres"),
 ("Château du Guérinet", "guerinet"),
 ("Château du Breuil de Doue", "breuil-doue"),
-("Château des Roses et des Tours", "roses-tours"),
-("Château des Martinanches", "martinanches"),
-("Château des Grange Fort", "grange-fort"),
-("Château de Portabéraud", "portaberaud"),
-("Château de Planchevienne", "planchevienne"),
+-- ("Château des Roses et des Tours", "roses-tours"),
+-- ("Château des Martinanches", "martinanches"),
+-- ("Château des Grange Fort", "grange-fort"),
+-- ("Château de Portabéraud", "portaberaud"),
+-- ("Château de Planchevienne", "planchevienne"),
 ("Château de Murol en Saint-Amant", "murol"),
 ("Château de Miremont", "miremont"),
-("Château de Maulmont", "maulmont"),
+-- ("Château de Maulmont", "maulmont"),
 ("Château de la Rivière", "riviere"),
 ("Château de la Motte", "motte"),
 ("Château de la Canière", "caniere"),
 ("Château de la Batisse", "batisse"),
-("Château de Gondolle", "gondolle"),
+-- ("Château de Gondolle", "gondolle"),
 ("Château de Davayat", "davayat"),
 ("Château de Chouvigny", "chouvigny"),
 ("Château de Bourrassol", "bourrassol"),
 ("Château Beauvoir", "beauvoir"),
-("Château de la Barge", "barge"),
+-- ("Château de la Barge", "barge"),
 
 -- Autres
 ("Hameau des Damayots", "damayots"),
-("Gymnase de Bourg-Lastic", "bourg-lastic"),
+-- ("Gymnase de Bourg-Lastic", "bourg-lastic"),
 ("Casino de Royat", "casino-royat"),
 ("Abbaye Saint Gilbert", "abbaye-saint-gilbert"),
-("Palais des Congrès", "palais-congres"),
-("Le Grand Enclos", "grand-enclos");
+-- ("Le Grand Enclos", "grand-enclos"),
+("Palais des Congrès", "palais-congres");
 
 -- Insertion des images
 INSERT INTO images (nom, chemin_img, alt, filtres_services, filtres_themes, filtres_lieux, tag, created_at) VALUES
-("Eclairage extérieur", "imgEclairageExterieur.jpeg", "Photo d'un éclairage extérieur", "eclairage", null, null, "imgHeroHome", NOW()),
-("Mariage Aubusson", "imgMariageAubusson.jpeg", "Photo d'un mariage à Aubusson", null, "mariage", null, "imgHeroHome", NOW()),
-("Mariage au Clos du Four", "imgMariageClosFour.jpeg", "Photo d'un mariage au Clos du Four", null, "mariage", null, "imgHeroHome", NOW()),
-("Mariage à Ébreuil avec déco lumineuse", "imgMariageEbreuilDecoLumineuse.jpeg", "Photo d'un mariage à Ébreuil avec déco lumineuse", "decoLumineuse", "mariage", null, "imgHeroHome", NOW()),
-("Mariage à Vichy avec DJ", "imgMariageVichyDJ.jpeg", "Photo d'un mariage à Vichy avec DJ", "artiste", "mariage", null, "imgHeroHome", NOW()),
-("Service Artiste", "imgServiceArtiste.jpeg", "Photo du service Artiste", "artiste", null, null, "imgSectionService", NOW()),
-("Service Décoration lumineuse", "imgServiceDecoLumineuse.jpeg", "Photo du service Décoration lumineuse", "decoLumineuse", null, null, "imgSectionService", NOW()),
+
+-- Image du hero
+("Service Décoration Lumineuse", "imgPlafondGuirlandeAraigneeCasinoRoyat_2.jpg", "Photo d'une guirlande araignee au plafond du casino de royat", "decoLumineuse", null, "casino-royat", "imgHeroHome", NOW()),
+("Service Décoration Lumineuse", "imgPlafondGuirlandeChateauMurolSaintAmant.jpg", "Photo d'une guirlande au plafond au chateau de murol saint amant", "decoLumineuse", null, "murol", "imgHeroHome", NOW()),
+("Service Décoration Lumineuse", "imgDecoLumineuseSalleFetesSaintIllide_1.jpg", "Photo de boule chinoise a la Salle des fêtes de Saint-Illide", "decoLumineuse", null, "saint-illide", "imgHeroHome", NOW()),
+("Service DJ/Artiste", "imgPisteDanceCasinoRoyat.jpg", "Photo d'une piste de danse au casino de royat", "artiste", null, "casino-royat", "imgHeroHome", NOW()),
+("Mariage à Ébreuil avec déco lumineuse", "imgDecoLumineuseMariageEbreuil.jpeg", "Photo d'un mariage à Ébreuil avec déco lumineuse", "decoLumineuse", null, null, "imgHeroHome", NOW()),
+
+-- Service Eclairage
+("Eclairage extérieur", "imgEclairageExterieur.jpeg", "Photo d'un éclairage extérieur", "eclairage", null, null, null, NOW()),
+("Service Eclairage", "imgEclairageChateauMotte.jpg", "Photo d'un éclairage au château de la motte", "eclairage", null, "motte", "imgSectionService", NOW()),
+("Service Eclairage", "imgEclairageChateauBourrassol.jpg", "Photo d'un éclairage au château de bourrassol", "eclairage", null, "bourrassol", null, NOW()),
+("Service Eclairage", "imgEclairageChateauChouvigny.jpg", "Photo d'un éclairage au château de chouvigny", "eclairage", null, "chouvigny", null, NOW()),
+("Service Eclairage", "imgEclairageDomaineSola.jpg", "Photo d'un éclairage au Domaine de Sola", "eclairage", null, "sola", null, NOW()),
+("Service Eclairage", "imgEclairageDomaineLacEstives_1.jpg", "Photo d'un éclairage au Domaine du Lac des Estives", "eclairage", null, "lac-estives", null, NOW()),
+("Service Eclairage", "imgEclairageDomaineLacEstives_2.jpg", "Photo d'un éclairage au Domaine du Lac des Estives", "eclairage", null, "lac-estives", null, NOW()),
+("Service Eclairage", "imgEclairageGrangeFaverolles_2.jpg", "Photo d'un éclairage a la Grange de Faverolles", "eclairage", null, "grange-faverolles", null, NOW()),
+("Service Eclairage", "imgEclairage.jpg", "Photo d'un éclairage dans des arbres", "eclairage", null, null, null, NOW()),
+("Service Eclairage", "imgEclairagePalaisCongres.jpg", "Photo d'un éclairage au Palais des Congrès", "eclairage", null, "palais-congres", null, NOW()),
+("Service Eclairage", "imgEclairageChateauBatisse.jpg", "Photo d'un éclairage au château de la batisse", "eclairage", null, "batisse", null, NOW()),
+
+-- Service Décoration Lumineuse
+("Service Décoration Lumineuse", "imgPlafondGuirlandeHameauDamayots.jpg", "Photo d'une guirlande au plafond au Hameau des Damayots", "decoLumineuse", null, "damayots", null, NOW()),
+("Service Décoration Lumineuse", "imgDecoLumineuseChateauBatisse.jpg", "Photo d'une décoration lumineuse au château de la batisse", "decoLumineuse", null, "batisse", null, NOW()),
+("Service Décoration Lumineuse", "imgDecoLumineuseChateauGuerinet.jpg", "Photo d'une décoration lumineuse au château de guerinet", "decoLumineuse", null, "guerinet", null, NOW()),
+("Service Décoration Lumineuse", "imgPlafondGuirlandeDomaineTourRocheFort.jpg", "Photo d'une guirlande au plafond au Domaine de la Tour de Rochefort", "decoLumineuse", null, "rochefort", null, NOW()),
+("Service Décoration Lumineuse", "imgPlafondGuirlandeDomaineFeligonde_1.jpg", "Photo d'une guirlande au plafond au domaine de feligonde", "decoLumineuse", null, "feligonde", null, NOW()),
+("Service Décoration Lumineuse", "imgPlafondGuirlandeDomaineFeligonde_2.jpg", "Photo d'une guirlande au plafond au domaine de feligonde", "decoLumineuse", null, "feligonde", null, NOW()),
+("Service Décoration Lumineuse", "imgPlafondGuirlandeDomaineFeligonde_3.jpg", "Photo d'une guirlande au plafond au domaine de feligonde", "decoLumineuse", null, "feligonde", null, NOW()),
+("Service Décoration Lumineuse", "imgDecoLumineuseDomaineBalbuzard.jpg", "Photo d'une décoration lumineuse au Domaine de Balbuzard", "decoLumineuse", null, "balbuzard", null, NOW()),
+("Service Décoration Lumineuse", "imgDecoLumineuseDomaineLacEstives_3.jpg", "Photo de suspension lumineuse au Domaine du Lac des Estives", "decoLumineuse", null, "lac-estives", null, NOW()),
+("Service Décoration Lumineuse", "imgDecoLumineuseDomaineLacEstives_4.jpg", "Photo de suspension lumineuse au Domaine du Lac des Estives", "decoLumineuse", null, "lac-estives", "imgSectionService", NOW()),
+("Service Décoration lumineuse", "imgServiceDecoLumineuse.jpeg", "Photo du service Décoration lumineuse", "decoLumineuse", null, null, null, NOW()),
+("Service Décoration Lumineuse", "imgDecoLumineuseSalleFetesSaintIllide_2.jpg", "Photo de boule chinoise a la Salle des fêtes de Saint-Illide", "decoLumineuse", null, "saint-illide", null, NOW()),
+("Service Décoration Lumineuse", "imgDecoLumineuseChateauCaniere.jpg", "Photo d'une guirlande exterieur au château de la canière", "decoLumineuse", null, "caniere", null, NOW()),
+("Service Décoration Lumineuse", "imgDecoLumineuseGrangeFaverolles_1.jpg", "Photo de boule chinoise a la Grange de Faverolles", "decoLumineuse", null, "grange-faverolles", null, NOW()),
+("Service Décoration Lumineuse", "imgDecoLumineuseGuinguette.jpg", "Photo d'une guirlande exterieur au théme guinguette", "decoLumineuse", "guinguette", null, null, NOW()),
+("Service Décoration lumineuse", "imgLustreChateauMiremont.jpg", "Photo d'un lustre au château de miremont", "decoLumineuse", null, "miremont", null, NOW()),
+("Service Décoration lumineuse", "imgPlafondGuirlandeAraigneeCasinoRoyat_1.jpg", "Photo d'une guirlande araignee au plafond du casino de royat", "decoLumineuse", null, "casino-royat", null, NOW()),
+("Service Décoration Lumineuse", "imgPlafondGuirlandeChateauBreuilDoue.jpg", "Photo d'une guirlande au plafond au chateau de breuil doue", "decoLumineuse", null, "breuil-doue", null, NOW()),
+("Service Décoration Lumineuse", "imgPlafondGuirlandeChateauMiremont_1.jpg", "Photo d'une guirlande au plafond au chateau de miremont", "decoLumineuse", null, "miremont", null, NOW()),
+("Service Décoration Lumineuse", "imgPlafondGuirlandeChateauMiremont_2.jpg", "Photo d'une guirlande au plafond au chateau de miremont", "decoLumineuse", null, "miremont", null, NOW()),
+("Service Décoration Lumineuse", "imgPlafondGuirlandeChateauRiviere.jpg", "Photo d'une guirlande au plafond du château de la rivière", "decoLumineuse", null, "riviere", null, NOW()),
+
+-- Service Décoration Textile
 ("Service Décoration textile", "imgServiceDecoTextile.jpeg", "Photo du service Décoration textile", "decoTextile", null, null, "imgSectionService", NOW()),
-("Service Eclairage", "imgServiceEclairage.jpeg", "Photo du service Eclairage", "eclairage", null, null, "imgSectionService", NOW()),
-("Service Effet Speciaux", "imgServiceEffetSpeciaux.jpeg", "Photo du service Effet Spéciaux", "effetSpeciaux", null, null, "imgSectionService", NOW()),
+("Service Décoration textile", "imgDecoTextileChateauBeauvoir.jpg", "Photo d'une décoration textile au château de beauvoir", "decoTextile", null, "beauvoir", null, NOW()),
+("Service Décoration Textile", "imgDecoTextileChateauPerigeres.jpg", "Photo d'une décoration textile au château de la perigeres", "decoTextile", null, "perigeres", null, NOW()),
+
+-- Service DJ/Artiste
+("Service DJ/Artiste", "imgPisteDanceChateauDavayat.jpg", "Photo d'un DJ/Artiste et piste de danse au château de davayat", "artiste", null, "davayat", null, NOW()),
+("Service DJ/Artiste", "imgPisteDanceChateauCaniere.jpg", "Photo d'une piste de dance au château de la canière", "artiste", null, "caniere", null, NOW()),
+("Service DJ/Artiste", "imgServiceArtiste.jpg", "Photo du service DJ/Artiste", "artiste", null, null, "imgSectionService", NOW()),
+
+-- Service Effets Spéciaux
+("Service Effets Spéciaux", "imgEffetSpeciauxChateauMiremont.jpg", "Photo de fumée effet spéciaux au château de miremont", "effetSpeciaux", null, "miremont", "imgSectionService", NOW()),
+
+-- Service Sonorisation
+("Service Sonorisation Laique", "imgServiceSonorisationLaique.jpg", "Photo du service Sonorisation laique", "sonorisation", "laique", null, null, NOW()),
+("Service Sonorisation", "imgServiceSonorisation.jpg", "Photo du service Sonorisation", "sonorisation", null, null, "imgSectionService", NOW()),
+("Service Sonorisation", "imgSonorisationLaiqueChateauCaniere.jpg", "Photo d'une cérémonie laique au château de la canière", "sonorisation", "laique", "caniere", null, NOW()),
+
+-- Service Vidéo
+("Service Projection sur table", "imgMappingCasinoRoyat_1.jpg", "Photo d'une projection sur table au Casino de Royat", "video", null, "casino-royat", null, NOW()),
+("Service Projection sur table", "imgMappingCasinoRoyat_2.jpg", "Photo d'une projection sur table au Casino de Royat", "video", null, "casino-royat", null, NOW()),
+("Service Projection sur table", "imgMappingCasinoRoyat_3.jpg", "Photo d'une projection sur table au Casino de Royat", "video", null, "casino-royat", "imgSectionService", NOW()),
+
+-- Service Mobilier
 ("Service Mobilier", "imgServiceMobilier.jpeg", "Photo du service Mobilier", "mobilier", null, null, "imgSectionService", NOW()),
-("Service Sonorisation", "imgServiceSonorisation.jpeg", "Photo du service Sonorisation", "sonorisation", null, null, "imgSectionService", NOW()),
-("Service Vidéo", "imgServiceVideo.jpeg", "Photo du service Vidéo", "video", null, null, "imgSectionService", NOW());
+
+-- Autre
+("Cérémonie laique au Château de la Canière", "imgLaiqueChateauCaniere_1.jpg", "Photo d'une cérémonie laique au château de la canière", null, "laique", "caniere", null, NOW()),
+("Cérémonie laique au Château de la Canière", "imgLaiqueChateauCaniere_2.jpg", "Photo d'une cérémonie laique au château de la canière", null, "laique", "caniere", null, NOW()),
+("Mariage au Clos du Four", "imgMariageClosFour.jpeg", "Photo d'un mariage au Domaine du Clos du Four", null, null, "clos-four", null, NOW()),
+("Mariage à Vichy avec DJ", "imgArtisteMariageVichy.jpeg", "Photo d'un mariage à Vichy avec DJ", "artiste", null, null, null, NOW()),
+("Château de la Canière", "imgChateauCaniere.jpg", "Photo au château de la canière", null, null, "caniere", null, NOW()),
+("Domaine du Marant", "imgDomaineMarant.jpg", "Photo d'un éclairage au Domaine du Marant", null, null, "marant", null, NOW()),
+("Abbaye Saint-Gilbert", "imgAbbayeSaintGilbert.jpg", "Photo à l'abbaye saint-gilbert", null, null, "abbaye-saint-gilbert", null, NOW());
 
 -- Insertion de l'article
 INSERT INTO article (title, content, created_at, user_id) VALUES

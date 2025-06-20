@@ -31,11 +31,11 @@ include_once '../../control/ImageControl/sectionServiceImageControl.php';
     <!-- Section Hero -->
     <?php include 'sectionHome/sectionHero.php'; ?>
 
-    <!-- Section Service inédit -->
-    <?php include 'sectionHome/sectionVideo.php'; ?>
-
     <!-- Section Service -->
     <?php include 'sectionHome/sectionService.php'; ?>
+
+    <!-- Section Service inédit -->
+    <?php include 'sectionHome/sectionVideo.php'; ?>
 
     <!-- Section Avis clients -->
     <?php include 'sectionHome/sectionAvis.php'; ?>

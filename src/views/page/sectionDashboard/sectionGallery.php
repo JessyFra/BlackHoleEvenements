@@ -9,12 +9,26 @@
                     <div class="mb-4">
                         <label for="photoName" class="form-label">Nom de la photo</label>
                         <input type="text" id="photoName" name="photoName"
-                            class="form-control" placeholder="Exemple : imgSonorisationGrangeEcuyer" required>
+                            class="form-control" placeholder="Exemple : imgServiceThemeLieux" required>
                     </div>
                     <div class="mb-4">
                         <label for="photoDesc" class="form-label">Description</label>
                         <input type="text" id="photoDesc" name="photoDesc"
                             class="form-control" placeholder="Exemple : Photo sonorisation à la Grange de l'écuyer" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="tag"
+                                name="tag"
+                                value="imgHeroHome">
+                            <label class="form-check-label" for="tag">
+                                Mettre cette photo dans le carrousel de la page d’accueil
+                            </label>
+                        </div>
                     </div>
 
                     <div class="row">
@@ -57,6 +71,11 @@
                                 <?php endforeach; ?>
                             </div>
                         </div>
+
+                        <div class="col-md-6 mb-4">
+                            <label for="new_theme" class="form-label fw-bold">Ajouter un nouveau thème</label>
+                            <input type="text" class="form-control" id="new_theme" name="new_theme" placeholder="Ex : Bohème">
+                        </div>
                     </div>
 
                     <div class="mb-4">
@@ -77,6 +96,11 @@
                                 </div>
                             <?php endforeach; ?>
                         </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <label for="new_lieu" class="form-label fw-bold">Ajouter un nouveau lieu</label>
+                        <input type="text" class="form-control" id="new_lieu" name="new_lieu" placeholder="Exemple : Château de Montbrun">
                     </div>
                 </div>
 

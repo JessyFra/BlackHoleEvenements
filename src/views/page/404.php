@@ -24,7 +24,7 @@ http_response_code(404);
 
         h1 {
             font-size: 72px;
-            color: var(--color-tomato-item);
+            color: var(--color-site-item);
         }
 
         p {

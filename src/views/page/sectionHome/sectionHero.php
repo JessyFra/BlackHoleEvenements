@@ -1,4 +1,4 @@
-<section class="hero-section container py-5">
+<section class="hero-section container">
     <div class="row align-items-center">
         <div class="col-md-6 text-center text-md-start">
             <img src="../../../public/assets/logo.png" alt="Logo de BlackHole Evènements" class="logo mb-3">
@@ -10,7 +10,7 @@
                 </a> : mariages, concerts, festivals...
             </p>
             <div class="center-btn mt-4">
-                <button class="btn">Créez votre devis ici</button>
+                <a href="contact.php" style="text-decoration: none;"><button class="btn">Un devis ? Contactez-nous</button></a>
             </div>
         </div>
 
@@ -45,32 +45,6 @@
             <p class="hero-description">
                 Black Hole Événements, votre expert événementiel à Riom, transforme chaque moment en une expérience unique. <br> Son, lumière, vidéo, déco, effets spéciaux... <br> Tout ce qu’il faut pour sublimer vos mariages, concerts, galas ou festivals, avec du matériel pro et sur-mesure.
             </p>
-            <div class="container text-center">
-                <h2 class="section-title">Nos Chiffres Clés</h2>
-
-                <hr class="title-separator">
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="stat-item">
-                            <h3><span class="count-up" data-target="750">0</span><span>+</span></h3>
-                            <p>Événements organisés</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="stat-item">
-                            <h3><span class="count-up" data-target="96">0</span><span>%</span></h3>
-                            <p>Clients satisfaits</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="stat-item">
-                            <h3><span class="count-up" data-target="25">0</span><span>+</span></h3>
-                            <p>Années d'expérience</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>

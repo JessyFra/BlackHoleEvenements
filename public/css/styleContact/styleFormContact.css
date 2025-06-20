@@ -13,7 +13,7 @@ body {
 /* Titre de la section */
 .section-title {
     font-weight: bold;
-    color: var(--color-tomato-item);
+    color: var(--color-site-item);
     margin-bottom: 0.3em;
     text-align: left;
 }
@@ -21,7 +21,7 @@ body {
 /* Séparateur sous le titre */
 .title-separator {
     border: 0;
-    border-top: 5px solid var(--color-tomato-item);
+    border-top: 5px solid var(--color-site-item);
     width: 100px;
     margin-left: 0;
     margin-bottom: 2rem;
@@ -63,7 +63,7 @@ body {
 }
 
 .contact-info strong {
-    color: var(--color-tomato-item);
+    color: var(--color-site-item);
 }
 
 /* === Formulaire et inputs (garde ton style existant) === */
@@ -195,7 +195,7 @@ form .inputBox input:focus ~ i {
 form input[type="submit"] {
     outline: none;
     padding: 9px 5px;
-    background: var(--color-tomato-item);
+    background: var(--color-site-item);
     cursor: pointer;
     font-size: 1em;
     border-radius: 4px;
@@ -208,7 +208,7 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-    background: var(--color-tomato-item-hover);
+    background: var(--color-site-item-hover);
     transform: translateY(-3px);
 }
 
@@ -228,7 +228,8 @@ form input[type="submit"]:active {
         padding: 0 20px 20px;
         min-height: auto;
     }
-    .left-cards, .right-form {
+    .left-cards,
+    .right-form {
         width: 100%;
         height: auto;
         justify-content: normal;

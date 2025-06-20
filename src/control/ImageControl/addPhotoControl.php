@@ -11,9 +11,19 @@ if (isset($_POST['publishPhoto'])) {
     $photoAlt  = $_POST['photoDesc'];
     $createdAt = date('Y-m-d H:i:s');
 
+    $validTags = ['imgHeroHome'];
+    $tag = null;
+
+    if (isset($_POST['tag']) && in_array($_POST['tag'], $validTags)) {
+        $tag = $_POST['tag'];
+    }
+
     $filtreService = $_POST['filtres_services'] ?? null;
     $filtreTheme   = $_POST['filtres_themes']   ?? null;
     $filtreLieu    = $_POST['filtres_lieux']    ?? null;
+
+    $newTheme = trim($_POST['new_theme'] ?? '');
+    $newLieu = trim($_POST['new_lieu'] ?? '');
 
     if (empty($photoName) || empty($photoDesc)) {
         die("Le nom et la description de la photo sont obligatoires.");
@@ -26,7 +36,17 @@ if (isset($_POST['publishPhoto'])) {
         $fileName = $_FILES['image']['name'];
         $fileExt  = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
 
-        $uniqueFilename = $photoName . '.' . $fileExt;
+        function removeAccents($str)
+        {
+            return iconv('UTF-8', 'ASCII//TRANSLIT', $str);
+        }
+
+        // Ajout d’un identifiant unique 
+        $uniqueId = '_' . uniqid();
+
+        $photoNameNoAccents = removeAccents($photoName);
+
+        $uniqueFilename = $photoNameNoAccents . $uniqueId . '.' . $fileExt;
         $destination = $uploadDir . $uniqueFilename;
 
         $width    = 800;
@@ -37,6 +57,40 @@ if (isset($_POST['publishPhoto'])) {
             die("Erreur lors de la compression/redimensionnement de l’image.");
         }
 
+        function generateValeur($str)
+        {
+            $str = iconv('UTF-8', 'ASCII//TRANSLIT', $str);
+            $str = preg_replace('/[^a-zA-Z]/', '', $str);
+            return strtolower($str);
+        }
+
+        if (!empty($newTheme)) {
+            $newThemeValeur = generateValeur($newTheme);
+
+            $stmt = $bdd->prepare("SELECT COUNT(*) FROM themes WHERE valeur = ?");
+            $stmt->execute([$newThemeValeur]);
+            if ($stmt->fetchColumn() == 0) {
+                $stmt = $bdd->prepare("INSERT INTO themes (nom, valeur) VALUES (?, ?)");
+                $stmt->execute([$newTheme, $newThemeValeur]);
+            }
+
+            $filtreTheme = $newThemeValeur;
+        }
+
+        if (!empty($newLieu)) {
+            $newLieuValeur = generateValeur($newLieu);
+
+            $stmt = $bdd->prepare("SELECT COUNT(*) FROM lieux WHERE valeur = ?");
+            $stmt->execute([$newLieuValeur]);
+            if ($stmt->fetchColumn() == 0) {
+                $stmt = $bdd->prepare("INSERT INTO lieux (nom, valeur) VALUES (?, ?)");
+                $stmt->execute([$newLieu, $newLieuValeur]);
+            }
+
+            $filtreLieu = $newLieuValeur;
+        }
+
+
         $addPhotoModel = new AddPhotoModel();
         $addPhoto = $addPhotoModel->insertPhoto(
             $bdd,
@@ -46,6 +100,7 @@ if (isset($_POST['publishPhoto'])) {
             $filtreService,
             $filtreTheme,
             $filtreLieu,
+            $tag,
             $createdAt
         );
 

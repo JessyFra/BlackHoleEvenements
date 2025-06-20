@@ -101,7 +101,7 @@
 /* Bouton */
 .content .seeMore {
     font-weight: bold;
-    background: var(--color-tomato-item);
+    background: var(--color-site-item);
     border-radius: 8px;
     transition: all 0.3s ease;
     padding: 10px 25px;
@@ -118,7 +118,7 @@
 }
 
 .content .seeMore:hover {
-    background: var(--color-tomato-item-hover);
+    background: var(--color-site-item-hover);
     transform: translateY(-3px);
 }
 
@@ -137,7 +137,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: var(--color-tomato-item);
+    background: var(--color-site-item);
     border-radius: 8px;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -155,7 +155,7 @@
 
 .button button:hover {
     transform: translateY(-3px);
-    background: var(--color-tomato-item-hover);
+    background: var(--color-site-item-hover);
 }
 
 /* ========== ANIMATION ========== */

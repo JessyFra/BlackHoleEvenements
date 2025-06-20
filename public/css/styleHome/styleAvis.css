@@ -4,8 +4,7 @@
 .customer-reviews {
     background-color: var(--color-gray-background);
     color: var(--color-text);
-    padding: 0 15px;
-    padding-bottom: 50px;
+    padding: 50px 15px;
 }
 
 /* Conteneur central */
@@ -14,6 +13,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 50px;
 }
 
 /* Source des avis */
@@ -23,13 +23,13 @@
 
 /* Lien vers la source */
 .linkAvis {
-    color: var(--color-tomato-item);
+    color: var(--color-site-item);
     text-decoration: none;
     font-weight: 500;
 }
 
 .linkAvis:hover {
-    color: var(--color-tomato-item-hover);
+    color: var(--color-site-item-hover);
 }
 
 /* Carte d’avis individuelle */
@@ -56,9 +56,14 @@
     margin-bottom: 0;
 }
 
+.review-date {
+    font-size: 13px;
+    font-style: italic;
+}
+
 /* Étoiles de notation */
 .stars {
-    color: var(--color-tomato-item);
+    color: var(--color-site-item);
     font-size: 18px;
     margin-top: 10px;
 }

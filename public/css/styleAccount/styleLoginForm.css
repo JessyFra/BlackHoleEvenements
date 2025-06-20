@@ -38,9 +38,9 @@ body {
         0deg,
         transparent,
         transparent,
-        var(--color-tomato-item),
-        var(--color-tomato-item),
-        var(--color-tomato-item)
+        var(--color-site-item),
+        var(--color-site-item),
+        var(--color-site-item)
     );
     z-index: 1;
     transform-origin: bottom right;
@@ -228,7 +228,7 @@ body {
     border: none;
     outline: none;
     padding: 9px 5px;
-    background: var(--color-tomato-item);
+    background: var(--color-site-item);
     cursor: pointer;
     font-size: 0.9em;
     border-radius: 8px;
@@ -240,7 +240,7 @@ body {
 }
 
 .box form input[type="submit"]:hover {
-    background: var(--color-tomato-item-hover);
+    background: var(--color-site-item-hover);
     transform: translateY(-3px);
 }
 

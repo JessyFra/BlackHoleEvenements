@@ -13,7 +13,8 @@ class GalleryImageModel
                     alt, 
                     filtres_services, 
                     filtres_themes, 
-                    filtres_lieux 
+                    filtres_lieux,
+                    tag
                 FROM images";
         $stmt = $bdd->prepare($sql);
         $stmt->execute();

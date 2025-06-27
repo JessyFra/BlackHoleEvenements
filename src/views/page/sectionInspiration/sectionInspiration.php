@@ -61,15 +61,24 @@
     <div class="gallery">
         <?php foreach ($imagesGallery as $img): ?>
             <div class="photo-wrapper position-relative">
-            <?php if (isset($_SESSION['userRole']) && $_SESSION['userRole'] == 'admin') { ?>
-                <a href="../../model/ImageModel/deleteImageModel.php?id=<?= $img['id'] ?>"
-                    class="delete-badge"
-                    title="Supprimer l’image"
-                    onclick="event.stopPropagation();">
-                    <i class="fa-solid fa-trash" style="color: red;"></i>
-                </a>
-            <?php } ?>
-            
+                <?php if (isset($_SESSION['userRole']) && $_SESSION['userRole'] == 'admin') { ?>
+                    <a href="../../model/ImageModel/deleteImageModel.php?id=<?= $img['id'] ?>"
+                        class="delete-badge"
+                        title="Supprimer l’image"
+                        onclick="event.stopPropagation();">
+                        <i class="fa-solid fa-trash" style="color: red;"></i>
+                    </a>
+
+                    <?php if ($img['tag'] !== 'imgSectionService') { ?>
+                        <button class="tagService-badge"
+                            title="Définir comme image de section"
+                            data-id="<?= $img['id'] ?>"
+                            data-service="<?= htmlspecialchars($img['filtres_services']) ?>">
+                            <i class="fa-solid fa-thumbtack" style="color: black;"></i>
+                        </button>
+                    <?php } ?>
+                <?php } ?>
+
                 <img
                     src="../../../public/assets/img/<?= htmlspecialchars($img['chemin_img']) ?>"
                     loading="lazy"
@@ -107,16 +116,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const modalImage = document.getElementById('modalImage');
-
-        document.querySelectorAll('.gallery .photo').forEach(img => {
-            img.addEventListener('click', function() {
-                modalImage.src = this.src;
-                modalImage.alt = this.alt;
-            });
-        });
-    });
-</script>

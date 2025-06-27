@@ -41,6 +41,7 @@ $selectedService = $_GET['service'] ?? '';
     <script src="../../../public/js/filterReset.js"></script>
     <script src="../../../public/js/searchLieu.js"></script>
     <script src="../../../public/js/filterServiceToInspiration.js"></script>
+    <script src="../../../public/js/galleryGestion.js"></script>
 
 </body>
 

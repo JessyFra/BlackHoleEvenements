@@ -26,77 +26,13 @@ body {
     overflow: hidden;
 }
 
-.box::before,
-.box::after {
-    content: "";
-    position: absolute;
-    left: -50%;
-    top: -50%;
-    width: 380px;
-    height: 420px;
-    background: linear-gradient(
-        0deg,
-        transparent,
-        transparent,
-        var(--color-site-item),
-        var(--color-site-item),
-        var(--color-site-item)
-    );
-    z-index: 1;
-    transform-origin: bottom right;
-    animation: animate 6s linear infinite;
-}
-
-.box::after {
-    animation-delay: -3s;
-}
-
 .borderLine {
     position: absolute;
     top: 0;
     inset: 0;
 }
 
-.borderLine::before,
-.borderLine::after {
-    content: "";
-    position: absolute;
-    left: -50%;
-    top: -50%;
-    width: 380px;
-    height: 420px;
-    background: linear-gradient(
-        0deg,
-        transparent,
-        transparent,
-        var(--color-gray-border),
-        var(--color-gray-border),
-        var(--color-gray-border)
-    );
-    z-index: 1;
-    transform-origin: bottom right;
-    animation: animate 6s linear infinite;
-}
-
-.borderLine::before {
-    animation-delay: -1.5s;
-}
-
-.borderLine::after {
-    animation-delay: -4.5s;
-}
-
 /* ========== ANIMATIONS ========== */
-
-@keyframes animate {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
 
 @keyframes fadeInUp {
     0% {
@@ -126,6 +62,7 @@ body {
     display: flex;
     flex-direction: column;
     background: var(--color-gray-background);
+    border: 2px solid var(--color-site-item);
 }
 
 .box form h2 {
@@ -202,26 +139,6 @@ body {
     height: 44px;
 }
 
-/* ========== FORM LINKS ========== */
-
-.box form .links {
-    display: flex;
-    justify-content: end;
-}
-
-.box form .links a {
-    margin: 10px 10px;
-    font-size: 0.75em;
-    color: var(--color-text);
-    font-weight: bold;
-    text-decoration: none;
-    font-style: italic;
-}
-
-.box form .links a:hover {
-    color: var(--color-text-hover);
-}
-
 /* ========== FORM SUBMIT BUTTON ========== */
 
 .box form input[type="submit"] {
@@ -234,7 +151,7 @@ body {
     border-radius: 8px;
     font-weight: 600;
     width: 125px;
-    margin-top: 10px;
+    margin-top: 55px;
     color: var(--color-gray-background);
     transition: all 0.3s ease;
 }

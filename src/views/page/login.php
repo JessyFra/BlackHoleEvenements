@@ -44,10 +44,6 @@ $errorKey = isset($_GET) ? array_key_first($_GET) : null;
                     <span>Mot de passe</span>
                     <i></i>
                 </div>
-                <!-- End of Input fields -->
-                <div class="links">
-                    <a href="#" style="cursor: default;">Mode administrateur</a>
-                </div>
                 <input type="submit" name="connexion" value="Se connecter">
             </form>
             <!-- End of Form -->

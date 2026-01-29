@@ -40,6 +40,19 @@ include_once '../../control/AdminControl/visitorControl.php';
         ?>
     <?php } ?>
 
+    <!-- Popup d'erreur -->
+    <?php if (isset($_SESSION['contact_error'])) { ?>
+        <div id="popup" class="popup show">
+            <div class="popup-content">
+                <p style="color: #dc3545;"><?php echo $_SESSION['contact_error']; ?></p>
+                <button id="closePopup">Fermer</button>
+            </div>
+        </div>
+        <?php
+        unset($_SESSION['contact_error']);
+        ?>
+    <?php } ?>
+
     <!-- Inclusion du pied de page -->
     <?php include '../component/footer.php' ?>
 

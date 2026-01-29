@@ -4,11 +4,14 @@ session_start();
 
 $isMessagerieView = (isset($_GET['type']) && $_GET['type'] === 'messagerie');
 $isGalleryView = (isset($_GET['type']) && $_GET['type'] === 'galerie');
+$isChangelogView = (isset($_GET['type']) && $_GET['type'] === 'changelog');
 
 if ($isMessagerieView) {
     include_once '../../control/AdminControl/messagerieControl.php';
 } elseif ($isGalleryView) {
     include_once '../../control/InspirationControl/filtreControl.php';
+} elseif ($isChangelogView) {
+    // Pas de contrôleur spécifique nécessaire pour le changelog
 } else {
     include_once '../../control/AdminControl/unReadMessageControl.php';
     include_once '../../model/AdminModel/visitorModel.php';
@@ -24,7 +27,7 @@ if ($isMessagerieView) {
     $monthVisitorCount = $monthData ? $monthData['visitor_count'] : 0;
 
     // Transforme les données annuelles en format JS
-    $monthlyData = array_fill(1, 12, 0); // [1 => 0, 2 => 0, ..., 12 => 0]
+    $monthlyData = array_fill(1, 12, 0);
     foreach ($yearData as $entry) {
         $monthlyData[(int)$entry['month']] = (int)$entry['visitor_count'];
     }
@@ -43,6 +46,8 @@ if ($isMessagerieView) {
         <link rel="stylesheet" href="../../../public/css/stylePopUp/stylePopUp.css">
     <?php } else if ($isGalleryView) { ?>
         <link rel="stylesheet" href="../../../public/css/styleAdmin/styleGallery.css">
+    <?php } else if ($isChangelogView) { ?>
+        <link rel="stylesheet" href="../../../public/css/styleAdmin/styleChangelog.css">
     <?php } else { ?>
         <link rel="stylesheet" href="../../../public/css/styleAdmin/styleDashboard.css">
     <?php } ?>
@@ -59,6 +64,8 @@ if ($isMessagerieView) {
         include 'sectionDashboard/sectionMessagerie.php';
     } else if ($isGalleryView) {
         include 'sectionDashboard/sectionGallery.php';
+    } else if ($isChangelogView) {
+        include 'sectionDashboard/sectionChangelog.php';
     } else {
         include 'sectionDashboard/sectionDashboard.php';
     } ?>
@@ -68,8 +75,8 @@ if ($isMessagerieView) {
 
     <?php if ($isMessagerieView) { ?>
         <script src="../../../public/js/messagePopup.js"></script>
-    <?php } else { 
-        include '../../../public/js/historyVisit.php'; 
+    <?php } else if (!$isGalleryView && !$isChangelogView) {
+        include '../../../public/js/historyVisit.php';
     } ?>
 
 </body>

@@ -24,6 +24,10 @@ $page_type = $_GET['type'] ?? '';
                             <li><a class="dropdown-item" href="dashboard.php">Dashboard</a></li>
                             <li><a class="dropdown-item" href="dashboard.php?type=messagerie">Messagerie</a></li>
                             <li><a class="dropdown-item" href="dashboard.php?type=galerie">Galerie</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="dashboard.php?type=changelog">Journal des modifications</a></li>
                         </ul>
                     </li>
 

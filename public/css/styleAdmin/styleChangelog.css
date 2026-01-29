@@ -1,0 +1,160 @@
+/* ========== PAGE CHANGELOG ========== */
+
+.main-container {
+    padding: 50px 40px;
+}
+
+/* Titre de la section */
+.main-container .section-title {
+    font-weight: bold;
+    color: var(--color-site-item);
+    margin-bottom: 0.3em;
+    text-align: left;
+}
+
+/* Séparateur sous le titre */
+.main-container .title-separator {
+    border: 0;
+    border-top: 5px solid var(--color-site-item);
+    width: 100px;
+    margin-left: 0;
+    margin-bottom: 2rem;
+    opacity: 100;
+    border-radius: 8px;
+}
+
+/* ========== INFORMATIONS ========== */
+
+.changelog-info {
+    background-color: var(--color-gray-background);
+    border-left: 4px solid var(--color-site-item);
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+.changelog-info code {
+    background-color: var(--color-gray-border);
+    color: var(--color-text);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* ========== LISTE DES MODIFICATIONS ========== */
+
+.changelog-list {
+    background-color: var(--color-gray-background);
+    border: 1px solid var(--color-gray-border);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px var(--color-gray-shadow);
+}
+
+/* ========== ENTRÉE INDIVIDUELLE ========== */
+
+.changelog-entry {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 15px 0;
+}
+
+.changelog-date {
+    min-width: 150px;
+    color: var(--color-site-item);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.changelog-date i {
+    font-size: 1.1rem;
+}
+
+.changelog-description {
+    flex: 1;
+    color: var(--color-text);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ========== SÉPARATEUR ========== */
+
+.changelog-separator {
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--color-gray-border) 20%,
+        var(--color-gray-border) 80%,
+        transparent
+    );
+    margin: 10px 0;
+}
+
+/* ========== STATISTIQUES ========== */
+
+.changelog-stats {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.stat-badge {
+    background-color: var(--color-gray-background);
+    border: 1px solid var(--color-gray-border);
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 4px var(--color-gray-shadow);
+    color: var(--color-text);
+}
+
+.stat-badge i {
+    color: var(--color-site-item);
+    font-size: 1.2rem;
+}
+
+/* ========== ANIMATION ========== */
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-container {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 30px 20px;
+    }
+
+    .changelog-entry {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .changelog-date {
+        min-width: auto;
+    }
+
+    .changelog-list {
+        padding: 20px 15px;
+    }
+}
